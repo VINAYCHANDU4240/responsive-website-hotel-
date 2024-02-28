@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag and Drop UI Elements</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="a1.css">
+  <style>
+    /* Custom CSS can go here */
+    .header img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      background-color: #f8f9fa;
+    }
+
+    .header h4 {
+      margin-right: 20px;
+    }
+
+    .draggable {
+      cursor: pointer;
+      margin-bottom: 5px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #f8f9fa;
+      margin-top: 20px;
+    }
+
+    /* Adjustments for small devices */
+    @media (max-width: 576px) {
+      .header h4 {
+        font-size: 1rem;
+        margin-right: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <!-- Header -->
+        <div class="header">
+          <h4>mProtoForge</h4>
+          <a href="https://www.cgg.gov.in/">
+            <img src="https://www.cgg.gov.in/core/uploads/2017/07/logo-1.png" alt="logo">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+        <!-- Left Panel -->
+        <div class="left-panel">
+          <div class="leftbar">
+            <div class="draggable" draggable="true" data-type="TextField"><i class="fas fa-font"></i><span>Text Field</span></div>
+            <div class="draggable" draggable="true" data-type="Heading"><i class="fas fa-heading"></i><span>Heading</span></div>
+            <div class="draggable" draggable="true" data-type="Paragraph"><i class="fas fa-align-left"></i><span>Text</span></div>
+            <div class="draggable" draggable="true" data-type="Checkbox"><i class="fas fa-check-square"></i><span>Checkbox</span></div>
+            <div class="draggable" draggable="true" data-type="RadioButton"><i class="fas fa-dot-circle"></i><span>Radio Button</span></div>
+            <div class="draggable" draggable="true" data-type="Dropdown"><i class="fas fa-caret-square-down"></i><span>Dropdown</span></div>
+            <div class="draggable" draggable="true" data-type="Image"><i class="fas fa-image"></i><span>Image</span></div>
+            <div class="draggable" draggable="true" data-type="Table"><i class="fas fa-table"></i><span>Table</span></div>
+            <div class="draggable" draggable="true" data-type="SubmitButton"><i class="fas fa-paper-plane"></i><span>Button</span></div>
+            <button class="draggable btn btn-primary btn-sm" id="clear-btn" onclick="clearLayout()"><i class="fas fa-trash"></i>Clear All</button>
+            <div class="draggable" draggable="true" data-type="Back"><i class="fa fa-angle-double-left"></i><span>Back</span></div>
+            <div class="draggable" draggable="true" data-type="skipping"><i class="fa fa-angle-double-right"></i><span>Skip</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-9 col-lg-8 col-md-6 col-sm-12">
+        <!-- Right Panel -->
+        <div class="right-panel" id="right_panel_data">
+          <!-- This is where the created layout will appear -->
+          <!-- <div id="mobile-layout">
+            <div id="screen-content" class="resizable">
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <!-- Bottom Buttons -->
+        <div class="downbar text-center">
+          <button class="btn btn-primary btn-sm" id="add-screen-btn" onclick="addScreen()">Add Screen</button>
+          <button class="btn btn-primary btn-sm" id="previous-btn">Previous</button>
+          <button class="btn btn-primary btn-sm" id="next-btn">Next</button>
+          <button class="btn btn-primary btn-sm" id="TextBox" onclick="TextBox()">TextBox</button>
+          <button class="btn btn-primary btn-sm" id="generatePDF" onclick="saveAsPDF()">Generate PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <!-- Footer -->
+        <div class="footer">Designed & developed by Centre for Good Governance</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="a1.js"></script>
+</body>
+
+</html>
